@@ -35,12 +35,11 @@ export default defineConfig((/* ctx */) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
-      target: {
-        vueRouterMode: 'hash',
-        distDir: 'dist',
-      },
+      vueRouterMode: 'hash',
+      distDir: 'docs',
+      
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+       // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
