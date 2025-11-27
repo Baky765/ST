@@ -3,17 +3,8 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      {
-        path: '',
-        component: () => import('pages/Countdown.vue')
-      }
+      { path: '', component: () => import('pages/IndexPage.vue') }
     ]
-  },
-
-  // necháme NotFound hahahahaha
-  {
-    path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
   }
 ]
 

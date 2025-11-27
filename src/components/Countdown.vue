@@ -1,34 +1,34 @@
 <template>
-  <q-page class="flex flex-center column q-pa-xl">
-    <div class="text-h4 text-center q-mb-xl">
-      Odpočet do finálnej série Stranger Things
-    </div>
-
-    <div class="row q-gutter-xl text-center">
+  <div class="column items-center q-my-md">
+    <div class="row q-gutter-lg text-center">
       <div class="column">
-        <div class="text-h2">{{ timeLeft.days }}</div>
-        <div class="text-subtitle1">Dni</div>
+        <div class="text-h4">{{ timeLeft.days }}</div>
+        <div class="text-subtitle2">Dní</div>
       </div>
       <div class="column">
-        <div class="text-h2">{{ timeLeft.hours }}</div>
-        <div class="text-subtitle1">Hodiny</div>
+        <div class="text-h4">{{ timeLeft.hours }}</div>
+        <div class="text-subtitle2">Hodín</div>
       </div>
       <div class="column">
-        <div class="text-h2">{{ timeLeft.minutes }}</div>
-        <div class="text-subtitle1">Minúty</div>
+        <div class="text-h4">{{ timeLeft.minutes }}</div>
+        <div class="text-subtitle2">Minút</div>
       </div>
       <div class="column">
-        <div class="text-h2">{{ timeLeft.seconds }}</div>
-        <div class="text-subtitle1">Sekundy</div>
+        <div class="text-h4">{{ timeLeft.seconds }}</div>
+        <div class="text-subtitle2">Sekúnd</div>
       </div>
     </div>
-  </q-page>
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
-const targetDate = new Date("2025-11-27T02:00:00+01:00"); // Slovensko
+const props = defineProps({
+  target: { type: String, required: true }
+});
+
+const targetDate = new Date(props.target);
 
 const timeLeft = ref({
   days: 0,
@@ -65,7 +65,7 @@ onUnmounted(() => clearInterval(interval));
 </script>
 
 <style scoped>
-.text-h2 {
+.text-h4 {
   font-weight: bold;
 }
 </style>

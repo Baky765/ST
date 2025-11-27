@@ -1,1 +1,46 @@
-/* app global css */
+body {
+  font-family: 'Cinzel', serif;
+  background: black;
+  color: #e50914; /* Stranger Things red */
+}
+
+.countdown-card {
+  border: 2px solid #e50914;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Stranger Things drawer theme */
+.st-drawer {
+  background: #000 !important;
+  color: #ff0000 !important;
+  font-family: 'Cinzel', serif;
+  padding: 20px;
+  border-right: 2px solid #330000;
+}
+
+.drawer-title {
+  font-size: 24px;
+  color: #ff0000;
+  text-shadow: 0 0 10px red;
+  margin-bottom: 20px;
+}
+
+.drawer-text {
+  font-size: 16px;
+  opacity: 0.85;
+  line-height: 1.5;
+  color: #ffcccc;
+}
+
+/* jemný pulz pre efekt “žijúceho Upside Down panelu” */
+@keyframes upsidePulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.drawer-text {
+  animation: upsidePulse 2.5s infinite alternate;
+}
+

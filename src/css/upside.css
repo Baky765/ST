@@ -1,0 +1,88 @@
+/* Fog / Upside-down background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.imgur.com/jPq9ZAk.png'); /* fog */
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  animation: fogMove 30s infinite linear;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes fogMove {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-300px); }
+}
+
+/* Red neon glow */
+.neon-red {
+  color: #e50914;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.8),
+               0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Glitch effect */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.glitch::before {
+  color: #00ffff;
+  transform: translate(2px, 0);
+  opacity: 0.7;
+  animation: glitch1 1.5s infinite;
+}
+
+.glitch::after {
+  color: #ff00ff;
+  transform: translate(-2px, 0);
+  opacity: 0.7;
+  animation: glitch2 1.5s infinite;
+}
+
+@keyframes glitch1 {
+  0% { clip-path: inset(0 0 80% 0); }
+  50% { clip-path: inset(10% 0 40% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitch2 {
+  0% { clip-path: inset(80% 0 0 0); }
+  50% { clip-path: inset(40% 0 10% 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+.st-drawer {
+  background: #000;
+  color: #ff0000;
+  font-family: 'Cinzel', serif;
+  padding: 20px;
+  border-right: 2px solid #500000;
+}
+
+.drawer-title {
+  font-size: 24px;
+  color: #ff0000;
+  text-shadow: 0 0 10px red;
+  margin-bottom: 20px;
+}
+
+.drawer-text {
+  font-size: 16px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+

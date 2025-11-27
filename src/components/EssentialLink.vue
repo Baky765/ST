@@ -1,44 +1,26 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="props.link"
-  >
-    <q-item-section
-      v-if="props.icon"
-      avatar
-    >
-      <q-icon :name="props.icon" />
-    </q-item-section>
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated>
+      <q-toolbar>
+        <q-btn flat dense round icon="menu" @click="leftDrawer = !leftDrawer" />
+        <q-toolbar-title>
+          Stranger Things Countdown
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
 
-    <q-item-section>
-      <q-item-label>{{ props.title }}</q-item-label>
-      <q-item-label caption>{{ props.caption }}</q-item-label>
-    </q-item-section>
-  </q-item>
+    <q-drawer v-model="leftDrawer" bordered>
+      <!-- ❗Tu už nič netreba — drawer bude prázdny -->
+      <div class="q-pa-md">Menu</div>
+    </q-drawer>
+
+    <q-page-container>
+      <router-view />
+    </q-page-container>
+  </q-layout>
 </template>
 
 <script setup>
-const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-
-  caption: {
-    type: String,
-    default: ''
-  },
-
-  link: {
-    type: String,
-    default: '#'
-  },
-
-  icon: {
-    type: String,
-    default: ''
-  }
-})
+import { ref } from "vue";
+const leftDrawer = ref(false);
 </script>

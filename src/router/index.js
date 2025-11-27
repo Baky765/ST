@@ -1,7 +1,7 @@
 import { defineRouter } from '#q-app/wrappers'
 import { createRouter, createMemoryHistory, createWebHistory, createWebHashHistory } from 'vue-router'
 import routes from './routes'
-import Countdown from '../pages/Countdown.vue';
+import Countdown from '../components/Countdown.vue';
 
 /*
  * If not building with SSR mode, you can
