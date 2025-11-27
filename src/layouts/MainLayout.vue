@@ -25,7 +25,9 @@
         Rána jsou na kafe a na rozjímání<br><br>
         Přátelé jsi nikdy nelžou<br>
         <br>
-        🔻TUUUUUUURN AROUND LOOK AT WHAT YOU SEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+       🔻RUDEJ KOOOOOOOOOOD!!!!!<br>
+        <br></br>
+        TUUUUUUURN AROUND LOOK AT WHAT YOU SEEEEEEEEEEEEEEEEEEEEEEEEEEEE<br>
       </div>
 
     </q-drawer>
